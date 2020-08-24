@@ -1,0 +1,291 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700,900&display=swap");
+
+::-webkit-scrollbar {
+  width: 7px;
+  position: relative;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0a4d3d;
+  border-radius: 3px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+#search::placeholder {
+  color: white;
+}
+
+/*---------------------------
+       SPINNER
+---------------------------*/
+.loading {
+  width: 125px;
+  height: 125px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #333333;
+  position: relative;
+  animation: a1 2s linear infinite;
+}
+.loading::before,
+.loading::after {
+  content: "";
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.loading::before {
+  border-top: 10px solid #fff;
+  transform: rotate(120deg);
+}
+.loading::after {
+  border-top: 10px solid #0a4d3d;
+  transform: rotate(240deg);
+}
+.loading span {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  color: black;
+  text-align: center;
+  line-height: 125px;
+  font-size: 16px;
+  font-weight: 500;
+  animation: a2 2s linear infinite;
+}
+@keyframes a1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes a2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.changeColor {
+  fill: #4f86ed;
+}
+
+/*---------------------------
+       IMAGE HOVER
+---------------------------*/
+[class*=" imghvr-"] a,
+[class^="imghvr-"] a {
+  position: relative;
+}
+[class*=" imghvr-"],
+[class^="imghvr-"] {
+  background-color: #0a4d3d;
+}
+[class*=" imghvr-shutter-in-"]:after,
+[class*=" imghvr-shutter-in-"]:before,
+[class^="imghvr-shutter-in-"]:after,
+[class^="imghvr-shutter-in-"]:before {
+  background: black !important;
+}
+[class*=" imghvr-"] figcaption,
+[class^="imghvr-"] figcaption {
+  background-color: #0a4d3d;
+}
+
+/*---------------------------
+       404 SVG
+---------------------------*/
+.cls-1 {
+  opacity: 0.3;
+}
+
+.cls-7 {
+  opacity: 0.8;
+}
+
+.cls-2 {
+  fill: #fff;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-14,
+.cls-16,
+.cls-3 {
+  fill: none;
+}
+
+.cls-3 {
+  stroke: #5c7690;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+
+.cls-14,
+.cls-15,
+.cls-16,
+.cls-3 {
+  stroke-width: 0.5px;
+}
+
+.cls-4 {
+  fill: #ffe1d9;
+}
+
+.cls-5 {
+  fill: #ffcfbf;
+}
+
+.cls-6 {
+  fill: #fecbb6;
+}
+
+.cls-9 {
+  fill: #fecb02;
+}
+
+.cls-10,
+.cls-12 {
+  stroke: #d26f51;
+}
+
+.cls-10,
+.cls-11 {
+  stroke-width: 0.38px;
+}
+
+.cls-11 {
+  stroke: #000;
+}
+
+.cls-12 {
+  stroke-width: 0.19px;
+}
+
+.cls-13 {
+  opacity: 0.45;
+}
+
+.cls-14,
+.cls-15,
+.cls-16 {
+  stroke: #b0bec5;
+  stroke-linejoin: round;
+}
+
+.cls-15 {
+  fill: #edf0f2;
+}
+
+.cls-16 {
+  stroke-linecap: round;
+}
+
+.cls-17 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 49.87px;
+  font-weight: 700;
+}
+
+.cls-18 {
+  fill: #fffdbb;
+  opacity: 0.5;
+}
+.earMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: earmove 1.5s linear infinite alternate;
+}
+
+.faceMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: move 1.5s linear infinite alternate;
+}
+
+.neckMove {
+  transition: all ease-in-out 2s;
+  transform-origin: 50% 50%;
+  animation: neck 1.5s linear infinite alternate;
+}
+
+@keyframes earmove {
+  0% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+  30% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+
+  60% {
+    transform: translateX(-0.7px) translateY(0px);
+  }
+
+  70% {
+    transform: translateX(-0.7px) translateY(-0.3px);
+  }
+  100% {
+    transform: translateX(-0.7px) translateY(-0.3px);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+  30% {
+    transform: translateX(-0.3px) translateY(0.6px);
+  }
+
+  60% {
+    transform: translateX(2px) translateY(0px);
+  }
+
+  70% {
+    transform: translateX(2px) translateY(-0.3px);
+  }
+  100% {
+    transform: translateX(2px) translateY(-0.3px);
+  }
+}
+
+@keyframes neck {
+  0% {
+    transform: translateY(0.7px);
+  }
+  50% {
+    transform: translateY(0.7px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
